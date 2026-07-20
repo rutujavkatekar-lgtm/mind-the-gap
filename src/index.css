@@ -13,19 +13,19 @@
 @theme {
   --font-sans: "Manrope", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
 
-  /* dark, moody, teal-glow atmosphere */
-  --color-paper: #070b0c; /* base app background — deep near-black */
-  --color-surface: #101c1d; /* lifted dark surface: cards, toasts, bordered controls */
-  --color-tile: #182a2c; /* pressed / active state, cover-art fallback */
-  --color-ink: #e9f3f1; /* primary light text, and light text on dark chips */
-  --color-ink-soft: #93aeb0; /* muted grey-blue secondary text */
-  --color-line: #223a3c; /* subtle dark teal-grey border / divider */
+  /* dark mode, pure black/white/grey scale, deliberately low-contrast */
+  --color-paper: #1c1c1e; /* base app background — dark grey, not pure black */
+  --color-surface: #242426; /* lifted dark surface: cards, toasts, bordered controls */
+  --color-tile: #2b2b2e; /* pressed / active state, cover-art fallback */
+  --color-ink: #bcbcbf; /* primary text — soft light grey, not stark white */
+  --color-ink-soft: #7c7c80; /* muted grey secondary text, low contrast on purpose */
+  --color-line: #313134; /* subtle border / divider, barely there */
 
-  --color-accent: #34e0c8; /* glowing teal/cyan — sparing, high-emphasis only */
-  --color-accent-dark: #1fb39e; /* pressed state of the accent */
-  --color-accent-tint: #10302e; /* dark teal-glow tint behind icons / selected states */
+  --color-accent: #9a9a9e; /* muted light grey — sparing, high-emphasis only, no hue */
+  --color-accent-dark: #818185; /* pressed state of the accent */
+  --color-accent-tint: #2a2a2d; /* dark tint behind icons / selected states */
 
-  --color-night: #010302; /* deepest near-black — outer bezel bg + dark text on accent */
+  --color-night: #08080a; /* deepest near-black — outer bezel bg + dark text on accent */
 }
 
 @layer base {
@@ -70,17 +70,16 @@
     scroll-snap-align: center;
   }
 
-  /* Organic, diffused teal glow over a near-black base, plus a fine film
-     grain layer — deliberately soft radial gradients rather than a hard
-     linear one, so it reads as ambient light rather than a stripe. */
+  /* Flat dark grey field, pure black/white/grey — no colour, no glow.
+     A faint grey vignette and film-grain layer add just enough depth to
+     avoid looking like a single flat swatch. */
   .bg-atmosphere {
     background-color: var(--color-paper);
     background-image:
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E"),
-      radial-gradient(ellipse 120% 60% at 50% 6%, rgba(31, 133, 128, 0.5), rgba(31, 133, 128, 0) 62%),
-      radial-gradient(ellipse 90% 60% at 90% 65%, rgba(22, 100, 104, 0.32), rgba(22, 100, 104, 0) 65%),
-      radial-gradient(ellipse 85% 55% at 6% 92%, rgba(18, 82, 86, 0.28), rgba(18, 82, 86, 0) 60%);
-    background-repeat: repeat, no-repeat, no-repeat, no-repeat;
-    background-size: 160px 160px, 100% 100%, 100% 100%, 100% 100%;
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"),
+      radial-gradient(ellipse 120% 70% at 50% 10%, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0) 65%),
+      radial-gradient(ellipse 100% 70% at 50% 100%, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0) 65%);
+    background-repeat: repeat, no-repeat, no-repeat;
+    background-size: 160px 160px, 100% 100%, 100% 100%;
   }
 }
