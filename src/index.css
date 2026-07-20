@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* earthy palette */
+  --color-paper: #f6f1e7;
+  --color-surface: #fffdf9;
+  --color-tile: #efe6d6;
+  --color-ink: #2a241d;
+  --color-ink-soft: #6f6555;
+  --color-line: #e2d7c3;
+
+  --color-terracotta: #c1592c;
+  --color-terracotta-dark: #9c4522;
+  --color-terracotta-tint: #f1ded1;
+
+  --color-moss: #6b7a5e;
+  --color-clay: #8c6e54;
+
+  --color-night: #211c16;
+}
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+    color-scheme: light;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-night);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overscroll-behavior-y: none;
+  }
+
+  #root {
+    min-height: 100dvh;
+  }
+
+  button {
+    font-family: inherit;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .snap-y-mandatory {
+    scroll-snap-type: y mandatory;
+  }
+
+  .snap-center {
+    scroll-snap-align: center;
+  }
+}
