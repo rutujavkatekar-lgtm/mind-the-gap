@@ -13,12 +13,18 @@ const TEXT_SIZES = [
 export function ReadingScreen({
   initialStory,
   journeyMinutes,
+  remainingMinutesRef,
   bookmarks,
   onToggleBookmark,
   onMarkVisited,
   onBack,
 }) {
-  const { current, next, previous, canGoBack } = useShuffleQueue(stories, initialStory);
+  const { current, next, previous, canGoBack } = useShuffleQueue(
+    stories,
+    initialStory,
+    "read",
+    remainingMinutesRef
+  );
   const [sizeIdx, setSizeIdx] = useState(1);
   const [toast, setToast] = useState(null);
   const scrollRef = useRef(null);
@@ -83,7 +89,7 @@ export function ReadingScreen({
             type="button"
             aria-label={isBookmarked ? "Remove bookmark" : "Add bookmark"}
             onClick={() => onToggleBookmark(current.id)}
-            className="flex h-10 w-10 items-center justify-center rounded-full text-terracotta transition active:scale-90"
+            className="flex h-10 w-10 items-center justify-center rounded-full text-accent transition active:scale-90"
           >
             <BookmarkIcon filled={isBookmarked} />
           </button>
@@ -99,7 +105,7 @@ export function ReadingScreen({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
           >
-            <p className="mt-1 text-[13px] font-semibold uppercase tracking-wide text-terracotta">
+            <p className="mt-1 text-[13px] font-semibold uppercase tracking-wide text-accent">
               {current.category} &middot; {current.readMinutes} min read
             </p>
             <h1 className={`mt-2 font-extrabold leading-tight text-ink ${size.title}`}>
@@ -131,7 +137,7 @@ export function ReadingScreen({
         <button
           type="button"
           onClick={next}
-          className="flex-1 rounded-2xl bg-terracotta py-3 text-[14px] font-bold text-paper transition active:scale-[0.98] active:bg-terracotta-dark"
+          className="flex-1 rounded-2xl bg-accent py-3 text-[14px] font-bold text-paper transition active:scale-[0.98] active:bg-accent-dark"
         >
           Next
         </button>

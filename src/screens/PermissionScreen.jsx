@@ -15,7 +15,7 @@ export function PermissionScreen({ onContinue }) {
       className="flex h-full flex-col justify-between px-6 pb-8 pt-16"
     >
       <div className="flex flex-col items-center text-center">
-        <div className="mb-8 flex h-28 w-28 items-center justify-center rounded-full bg-terracotta-tint text-terracotta">
+        <div className="mb-8 flex h-28 w-28 items-center justify-center rounded-full bg-accent-tint text-accent">
           <LocationPinIcon />
         </div>
         <h1 className="text-[28px] font-extrabold leading-tight text-ink">
@@ -26,7 +26,7 @@ export function PermissionScreen({ onContinue }) {
         <p className="mt-3 max-w-[26ch] text-[15px] leading-snug text-ink-soft">
           Mind the Gap uses your station to time stories to your journey.
         </p>
-        <div className="mt-8 w-16 text-terracotta/70">
+        <div className="mt-8 w-16 text-accent/70">
           <TileDivider />
         </div>
       </div>
@@ -35,7 +35,7 @@ export function PermissionScreen({ onContinue }) {
         <button
           type="button"
           onClick={() => onContinue("allow")}
-          className="w-full rounded-2xl bg-terracotta py-4 text-[16px] font-bold text-paper transition active:scale-[0.98] active:bg-terracotta-dark"
+          className="w-full rounded-2xl bg-accent py-4 text-[16px] font-bold text-paper transition active:scale-[0.98] active:bg-accent-dark"
         >
           Allow
         </button>

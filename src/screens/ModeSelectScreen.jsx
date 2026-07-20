@@ -24,13 +24,13 @@ export function ModeSelectScreen({ destination, onSelectMode, onBack }) {
       </button>
 
       <div className="mt-3">
-        <p className="text-[13px] font-semibold uppercase tracking-wide text-terracotta">
+        <p className="text-[13px] font-semibold uppercase tracking-wide text-accent">
           {minutes} min to {destination}
         </p>
         <h1 className="mt-1 text-[26px] font-extrabold leading-tight text-ink">
           How do you want it?
         </h1>
-        <div className="mt-4 max-w-16 text-terracotta/60">
+        <div className="mt-4 max-w-16 text-accent/60">
           <TileDivider />
         </div>
       </div>

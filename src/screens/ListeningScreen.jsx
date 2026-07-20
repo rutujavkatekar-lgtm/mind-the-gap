@@ -26,12 +26,18 @@ function formatTime(totalSeconds) {
 export function ListeningScreen({
   initialStory,
   journeyMinutes,
+  remainingMinutesRef,
   bookmarks,
   onToggleBookmark,
   onMarkVisited,
   onBack,
 }) {
-  const { current, next, previous, canGoBack } = useShuffleQueue(stories, initialStory);
+  const { current, next, previous, canGoBack } = useShuffleQueue(
+    stories,
+    initialStory,
+    "listen",
+    remainingMinutesRef
+  );
   const [isPlaying, setIsPlaying] = useState(true);
   const [elapsed, setElapsed] = useState(0);
   const [speedIdx, setSpeedIdx] = useState(0);
@@ -99,16 +105,16 @@ export function ListeningScreen({
             transition={{ duration: 0.3 }}
             className="flex w-full flex-col items-center"
           >
-            <div className="relative h-56 w-56 overflow-hidden rounded-3xl border-2 border-terracotta bg-tile">
-              <TileField className="h-full w-full text-terracotta/25" />
+            <div className="relative h-56 w-56 overflow-hidden rounded-3xl border-2 border-accent bg-tile">
+              <TileField className="h-full w-full text-accent/25" />
               <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-[15px] font-bold uppercase tracking-widest text-terracotta/70">
+                <span className="text-[15px] font-bold uppercase tracking-widest text-accent/70">
                   {current.category}
                 </span>
               </div>
             </div>
 
-            <p className="mt-7 text-[13px] font-semibold uppercase tracking-wide text-terracotta">
+            <p className="mt-7 text-[13px] font-semibold uppercase tracking-wide text-accent">
               {current.listenMinutes} min listen
             </p>
             <h1 className="mt-1 max-w-[26ch] text-center text-[24px] font-extrabold leading-tight text-ink">
@@ -125,7 +131,7 @@ export function ListeningScreen({
             type="button"
             aria-label={isBookmarked ? "Remove bookmark" : "Add bookmark"}
             onClick={() => onToggleBookmark(current.id)}
-            className="text-terracotta transition active:scale-90"
+            className="text-accent transition active:scale-90"
           >
             <BookmarkIcon filled={isBookmarked} />
           </button>
@@ -155,9 +161,9 @@ export function ListeningScreen({
           max={duration}
           value={elapsed}
           onChange={(e) => seek(Number(e.target.value))}
-          className="w-full accent-terracotta"
+          className="w-full accent-accent"
           style={{
-            background: `linear-gradient(to right, var(--color-terracotta) ${progressPct}%, var(--color-line) ${progressPct}%)`,
+            background: `linear-gradient(to right, var(--color-accent) ${progressPct}%, var(--color-line) ${progressPct}%)`,
           }}
           aria-label="Seek"
         />
@@ -189,7 +195,7 @@ export function ListeningScreen({
           type="button"
           aria-label={isPlaying ? "Pause" : "Play"}
           onClick={() => setIsPlaying((p) => !p)}
-          className="flex h-16 w-16 items-center justify-center rounded-full bg-terracotta text-paper shadow-md transition active:scale-95"
+          className="flex h-16 w-16 items-center justify-center rounded-full bg-accent text-paper shadow-md transition active:scale-95"
         >
           {isPlaying ? <PauseIcon /> : <PlayIcon className="ml-0.5" />}
         </button>

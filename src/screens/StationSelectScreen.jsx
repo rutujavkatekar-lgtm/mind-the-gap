@@ -55,7 +55,7 @@ export function StationSelectScreen({ onSelect, onOpenSettings }) {
     >
       <div className="flex items-start justify-between">
         <div>
-          <p className="text-[13px] font-semibold uppercase tracking-wide text-terracotta">
+          <p className="text-[13px] font-semibold uppercase tracking-wide text-accent">
             You're at
           </p>
           <h1 className="mt-1 text-[26px] font-extrabold leading-tight text-ink">
@@ -72,7 +72,7 @@ export function StationSelectScreen({ onSelect, onOpenSettings }) {
         </button>
       </div>
 
-      <div className="mt-2 text-terracotta/60">
+      <div className="mt-2 text-accent/60">
         <TileDivider />
       </div>
 
@@ -87,7 +87,7 @@ export function StationSelectScreen({ onSelect, onOpenSettings }) {
         >
           {/* highlight band */}
           <div
-            className="pointer-events-none absolute left-0 right-0 rounded-2xl bg-terracotta-tint"
+            className="pointer-events-none absolute left-0 right-0 rounded-2xl bg-accent-tint"
             style={{ top: PADDING, height: ITEM_HEIGHT }}
           />
 

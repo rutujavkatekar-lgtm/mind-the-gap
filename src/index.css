@@ -3,22 +3,19 @@
 @theme {
   --font-sans: "Manrope", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
 
-  /* earthy palette */
-  --color-paper: #f6f1e7;
-  --color-surface: #fffdf9;
-  --color-tile: #efe6d6;
-  --color-ink: #2a241d;
-  --color-ink-soft: #6f6555;
-  --color-line: #e2d7c3;
+  /* black / white / grey palette */
+  --color-paper: #ffffff;
+  --color-surface: #ffffff;
+  --color-tile: #ececec;
+  --color-ink: #161616;
+  --color-ink-soft: #6b6b6b;
+  --color-line: #dcdcdc;
 
-  --color-terracotta: #c1592c;
-  --color-terracotta-dark: #9c4522;
-  --color-terracotta-tint: #f1ded1;
+  --color-accent: #1a1a1a;
+  --color-accent-dark: #000000;
+  --color-accent-tint: #e7e7e7;
 
-  --color-moss: #6b7a5e;
-  --color-clay: #8c6e54;
-
-  --color-night: #211c16;
+  --color-night: #0a0a0a;
 }
 
 @layer base {
