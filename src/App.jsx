@@ -177,12 +177,12 @@ export default function App() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -16 }}
             transition={{ duration: 0.3 }}
-            className="pointer-events-none absolute left-4 right-4 top-4 z-20 flex items-center gap-3 rounded-2xl bg-ink px-4 py-3 shadow-lg"
+            className="pointer-events-none absolute left-4 right-4 top-4 z-20 flex items-center gap-3 rounded-2xl border border-line bg-surface px-4 py-3 shadow-lg"
           >
-            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-paper/15 text-paper">
+            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent-tint text-accent">
               <LocationPinIcon width={18} height={18} />
             </span>
-            <p className="text-[14px] font-semibold leading-snug text-paper">
+            <p className="text-[14px] font-semibold leading-snug text-ink">
               Arriving at {destination} in 1 min
             </p>
           </motion.div>

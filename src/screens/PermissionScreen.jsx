@@ -26,7 +26,7 @@ export function PermissionScreen({ onContinue }) {
         <p className="mt-3 max-w-[26ch] text-[15px] leading-snug text-ink-soft">
           Mind the Gap uses your station to time stories to your journey.
         </p>
-        <div className="mt-8 w-16 text-accent/70">
+        <div className="mt-8 w-16 text-ink-soft/40">
           <TileDivider />
         </div>
       </div>
@@ -35,7 +35,7 @@ export function PermissionScreen({ onContinue }) {
         <button
           type="button"
           onClick={() => onContinue("allow")}
-          className="w-full rounded-2xl bg-accent py-4 text-[16px] font-bold text-paper transition active:scale-[0.98] active:bg-accent-dark"
+          className="w-full rounded-2xl bg-accent py-4 text-[16px] font-bold text-night transition active:scale-[0.98] active:bg-accent-dark"
         >
           Allow
         </button>

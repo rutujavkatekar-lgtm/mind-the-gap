@@ -106,7 +106,7 @@ export function ListeningScreen({
             className="flex w-full flex-col items-center"
           >
             <div className="relative h-56 w-56 overflow-hidden rounded-3xl border-2 border-accent bg-tile">
-              <TileField className="h-full w-full text-accent/25" />
+              <TileField className="h-full w-full text-ink-soft/15" />
               <div className="absolute inset-0 flex items-center justify-center">
                 <span className="text-[15px] font-bold uppercase tracking-widest text-accent/70">
                   {current.category}
@@ -195,7 +195,7 @@ export function ListeningScreen({
           type="button"
           aria-label={isPlaying ? "Pause" : "Play"}
           onClick={() => setIsPlaying((p) => !p)}
-          className="flex h-16 w-16 items-center justify-center rounded-full bg-accent text-paper shadow-md transition active:scale-95"
+          className="flex h-16 w-16 items-center justify-center rounded-full bg-accent text-night shadow-md transition active:scale-95"
         >
           {isPlaying ? <PauseIcon /> : <PlayIcon className="ml-0.5" />}
         </button>

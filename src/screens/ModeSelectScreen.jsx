@@ -30,7 +30,7 @@ export function ModeSelectScreen({ destination, onSelectMode, onBack }) {
         <h1 className="mt-1 text-[26px] font-extrabold leading-tight text-ink">
           How do you want it?
         </h1>
-        <div className="mt-4 max-w-16 text-accent/60">
+        <div className="mt-4 max-w-16 text-ink-soft/35">
           <TileDivider />
         </div>
       </div>
@@ -52,12 +52,12 @@ export function ModeSelectScreen({ destination, onSelectMode, onBack }) {
         <button
           type="button"
           onClick={() => onSelectMode("listen")}
-          className="group flex flex-1 flex-col items-center justify-center rounded-3xl bg-ink transition active:scale-[0.98]"
+          className="group flex flex-1 flex-col items-center justify-center rounded-3xl bg-accent transition active:scale-[0.98] active:bg-accent-dark"
         >
-          <span className="text-[34px] font-extrabold tracking-tight text-paper">
+          <span className="text-[34px] font-extrabold tracking-tight text-night">
             Listen
           </span>
-          <span className="mt-2 text-[13px] font-medium text-paper/70">
+          <span className="mt-2 text-[13px] font-medium text-night/70">
             Narrated for the ride
           </span>
         </button>

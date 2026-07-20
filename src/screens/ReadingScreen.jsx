@@ -137,7 +137,7 @@ export function ReadingScreen({
         <button
           type="button"
           onClick={next}
-          className="flex-1 rounded-2xl bg-accent py-3 text-[14px] font-bold text-paper transition active:scale-[0.98] active:bg-accent-dark"
+          className="flex-1 rounded-2xl bg-accent py-3 text-[14px] font-bold text-night transition active:scale-[0.98] active:bg-accent-dark"
         >
           Next
         </button>
@@ -149,7 +149,7 @@ export function ReadingScreen({
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
-            className="pointer-events-none absolute bottom-24 left-1/2 -translate-x-1/2 rounded-full bg-ink px-4 py-2 text-[12px] font-semibold text-paper shadow-lg"
+            className="pointer-events-none absolute bottom-24 left-1/2 -translate-x-1/2 rounded-full border border-line bg-surface px-4 py-2 text-[12px] font-semibold text-ink shadow-lg"
           >
             {toast}
           </motion.div>

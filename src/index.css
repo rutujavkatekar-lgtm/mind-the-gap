@@ -13,25 +13,25 @@
 @theme {
   --font-sans: "Manrope", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
 
-  /* black / white / grey palette */
-  --color-paper: #ffffff;
-  --color-surface: #ffffff;
-  --color-tile: #ececec;
-  --color-ink: #161616;
-  --color-ink-soft: #6b6b6b;
-  --color-line: #dcdcdc;
+  /* dark, moody, teal-glow atmosphere */
+  --color-paper: #070b0c; /* base app background — deep near-black */
+  --color-surface: #101c1d; /* lifted dark surface: cards, toasts, bordered controls */
+  --color-tile: #182a2c; /* pressed / active state, cover-art fallback */
+  --color-ink: #e9f3f1; /* primary light text, and light text on dark chips */
+  --color-ink-soft: #93aeb0; /* muted grey-blue secondary text */
+  --color-line: #223a3c; /* subtle dark teal-grey border / divider */
 
-  --color-accent: #1a1a1a;
-  --color-accent-dark: #000000;
-  --color-accent-tint: #e7e7e7;
+  --color-accent: #34e0c8; /* glowing teal/cyan — sparing, high-emphasis only */
+  --color-accent-dark: #1fb39e; /* pressed state of the accent */
+  --color-accent-tint: #10302e; /* dark teal-glow tint behind icons / selected states */
 
-  --color-night: #0a0a0a;
+  --color-night: #010302; /* deepest near-black — outer bezel bg + dark text on accent */
 }
 
 @layer base {
   html {
     -webkit-tap-highlight-color: transparent;
-    color-scheme: light;
+    color-scheme: dark;
   }
 
   body {
@@ -68,5 +68,19 @@
 
   .snap-center {
     scroll-snap-align: center;
+  }
+
+  /* Organic, diffused teal glow over a near-black base, plus a fine film
+     grain layer — deliberately soft radial gradients rather than a hard
+     linear one, so it reads as ambient light rather than a stripe. */
+  .bg-atmosphere {
+    background-color: var(--color-paper);
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E"),
+      radial-gradient(ellipse 120% 60% at 50% 6%, rgba(31, 133, 128, 0.5), rgba(31, 133, 128, 0) 62%),
+      radial-gradient(ellipse 90% 60% at 90% 65%, rgba(22, 100, 104, 0.32), rgba(22, 100, 104, 0) 65%),
+      radial-gradient(ellipse 85% 55% at 6% 92%, rgba(18, 82, 86, 0.28), rgba(18, 82, 86, 0) 60%);
+    background-repeat: repeat, no-repeat, no-repeat, no-repeat;
+    background-size: 160px 160px, 100% 100%, 100% 100%, 100% 100%;
   }
 }

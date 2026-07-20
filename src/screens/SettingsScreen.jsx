@@ -32,7 +32,7 @@ export function SettingsScreen({ history, bookmarks, onToggleBookmark, onBack })
         <h1 className="text-[22px] font-extrabold text-ink">Settings</h1>
       </div>
 
-      <div className="mt-3 text-accent/60">
+      <div className="mt-3 text-ink-soft/35">
         <TileDivider />
       </div>
 
@@ -99,7 +99,7 @@ export function SettingsScreen({ history, bookmarks, onToggleBookmark, onBack })
       <button
         type="button"
         onClick={onBack}
-        className="mb-8 w-full rounded-2xl bg-accent py-4 text-[16px] font-bold text-paper transition active:scale-[0.98] active:bg-accent-dark"
+        className="mb-8 w-full rounded-2xl bg-accent py-4 text-[16px] font-bold text-night transition active:scale-[0.98] active:bg-accent-dark"
       >
         Start a new journey
       </button>

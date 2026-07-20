@@ -72,7 +72,7 @@ export function StationSelectScreen({ onSelect, onOpenSettings }) {
         </button>
       </div>
 
-      <div className="mt-2 text-accent/60">
+      <div className="mt-2 text-ink-soft/35">
         <TileDivider />
       </div>
 
