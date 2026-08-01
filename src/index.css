@@ -10,8 +10,28 @@
   src: url("./assets/fonts/manrope-variable.woff2") format("woff2");
 }
 
+/* Typography feed screen: bold display face + a script accent face,
+   self-hosted for the same offline-first reasons as Manrope above. */
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("./assets/fonts/open-sans-bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Caveat";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("./assets/fonts/caveat-variable.woff2") format("woff2");
+}
+
 @theme {
   --font-sans: "Manrope", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-feed: "Open Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-script: "Caveat", cursive;
 
   /* dark mode, pure black/white/grey scale, deliberately low-contrast */
   --color-paper: #1c1c1e; /* base app background — dark grey, not pure black */
