@@ -8,7 +8,7 @@ function titleFor(id) {
   return story ? { title: story.title, author: story.author } : null;
 }
 
-export function SettingsScreen({ history, bookmarks, onToggleBookmark, onBack }) {
+export function SettingsScreen({ history, bookmarks, onToggleBookmark, onBack, onOpenFeed }) {
   const historyItems = history.map(titleFor).filter(Boolean);
   const bookmarkedItems = bookmarks.map(titleFor).filter(Boolean);
 
@@ -94,6 +94,21 @@ export function SettingsScreen({ history, bookmarks, onToggleBookmark, onBack })
             </ul>
           )}
         </section>
+
+        {onOpenFeed && (
+          <section className="mt-9">
+            <h2 className="text-[13px] font-bold uppercase tracking-wide text-ink-soft">
+              Preview
+            </h2>
+            <button
+              type="button"
+              onClick={onOpenFeed}
+              className="mt-3 w-full rounded-2xl border border-line py-3 text-[14px] font-bold text-ink transition active:scale-[0.98]"
+            >
+              Typography feed (in progress)
+            </button>
+          </section>
+        )}
       </div>
 
       <button

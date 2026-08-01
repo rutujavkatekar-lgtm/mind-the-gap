@@ -7,6 +7,7 @@ import { ModeSelectScreen } from "./screens/ModeSelectScreen";
 import { ReadingScreen } from "./screens/ReadingScreen";
 import { ListeningScreen } from "./screens/ListeningScreen";
 import { SettingsScreen } from "./screens/SettingsScreen";
+import { TypographyFeedScreen } from "./screens/TypographyFeedScreen";
 import { stories } from "./data/stories";
 import { getJourneyMinutes } from "./data/stations";
 import { pickStoryForJourney } from "./lib/match";
@@ -165,7 +166,12 @@ export default function App() {
             bookmarks={bookmarks}
             onToggleBookmark={toggleBookmark}
             onBack={startNewJourney}
+            onOpenFeed={() => setPhase("feed")}
           />
+        )}
+
+        {phase === "feed" && (
+          <TypographyFeedScreen key="feed" onBack={() => setPhase("settings")} />
         )}
       </AnimatePresence>
 
